@@ -1,4 +1,4 @@
-package com.project.travel.ui
+package com.project.travel.ui.cityAgenda
 
 import android.util.Log
 import com.project.travel.model.ResponseEvent
@@ -6,10 +6,10 @@ import com.project.travel.networking.ApiClient
 import retrofit2.Call
 import retrofit2.Response
 
-class MainActiviyPresenter(val contract: MainActivityContract) {
+class CityAgendaPresenter (val contract: CityAgendaContract){
 
-    fun getListProduk(){
-        ApiClient.getService().getToko()
+    fun getListCityAgenda(){
+        ApiClient.getService().getEvent()
             .enqueue(object : retrofit2.Callback<List<ResponseEvent>>{
                 override fun onResponse(
                     call: Call<List<ResponseEvent>>,
@@ -17,7 +17,7 @@ class MainActiviyPresenter(val contract: MainActivityContract) {
                 ) {
 
                     if (response.isSuccessful){
-                        contract.onSuccessGetEvent(response.body())
+                        contract.onSuccessGetCityAgenda(response.body())
                     }else{
                         contract.onErrorGetList(response.message())
                     }

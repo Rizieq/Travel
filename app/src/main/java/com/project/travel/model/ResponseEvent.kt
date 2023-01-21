@@ -27,5 +27,9 @@ import java.io.Serializable
     val OtherInfo: String? = null,
 
     @field:SerializedName("Photo")
-    val Photo: String? = null
+    val Photo: String? = null,
+
+    @field:SerializedName("eventDate")
+    val eventDate: String? = null
+
  )

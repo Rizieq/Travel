@@ -47,7 +47,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="320dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
@@ -68,7 +68,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/poppinsmedium"
-                android:text="Hello, Ghifari"
+                android:text="Good Morning"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -87,7 +87,7 @@
 
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/imgAlertCall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
@@ -97,38 +97,87 @@
                 app:srcCompat="@drawable/bell_alert" />
 
             <TextView
+                android:id="@+id/textView28"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppinslight"
-                android:text="Alert Call"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Emerge..."
                 android:textSize="11dp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/textView5"
-                app:layout_constraintEnd_toEndOf="@+id/imageView2"
-                app:layout_constraintStart_toStartOf="@+id/imageView2"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                app:layout_constraintEnd_toEndOf="@+id/imgAlertCall"
+                app:layout_constraintStart_toStartOf="@+id/imgAlertCall"
+                app:layout_constraintTop_toBottomOf="@+id/imgAlertCall" />
 
+            <ImageView
+                android:id="@+id/imgPesanan"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/list"
+                app:layout_constraintEnd_toEndOf="@+id/textView29"
+                app:layout_constraintHorizontal_bias="0.51"
+                app:layout_constraintStart_toStartOf="@+id/textView29"
+                app:layout_constraintTop_toTopOf="@+id/imgAlertCall" />
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Pesanan"
+                android:textSize="11dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/textView28"
+                app:layout_constraintEnd_toStartOf="@+id/textView28" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <com.github.islamkhsh.CardSliderViewPager
+        android:id="@+id/cardHomeSlider"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="30dp"
+        app:auto_slide_time="3"
+        app:cardSlider_indicator="@id/cardHomeIndicator"
+        app:cardSlider_otherPagesWidth="30dp"
+        app:cardSlider_pageMargin="0dp"
+        app:cardSlider_smallAlphaFactor="22.0"
+
+        app:cardSlider_smallScaleFactor="1.0"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <com.github.islamkhsh.CardSliderIndicator
+        android:id="@+id/cardHomeIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/cardHomeSlider"
+        app:layout_constraintStart_toStartOf="@+id/cardHomeSlider"
+        app:layout_constraintTop_toBottomOf="@+id/cardHomeSlider" />
 
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
         android:fontFamily="@font/poppinsmedium"
         android:text="Enjoy Your Trip"
         android:textSize="18dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintTop_toBottomOf="@id/cardHomeIndicator" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/btn_city_agenda"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="20dp"
         app:cardCornerRadius="15dp"
         app:layout_constraintStart_toStartOf="@+id/textView4"
@@ -155,7 +204,7 @@
                 android:id="@+id/txt_city_agenda"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppinsmedium"
                 android:text="City agenda"
                 app:layout_constraintStart_toStartOf="@+id/img_city_agenda"
@@ -164,7 +213,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppinslight"
                 android:text="Event and other"
                 android:textSize="11dp"
@@ -176,167 +224,16 @@
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/btn_transport"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
+        android:id="@+id/btn_find_place"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         app:cardCornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/btn_city_agenda"
-        app:layout_constraintEnd_toStartOf="@+id/btn_weather"
+        app:layout_constraintEnd_toStartOf="@+id/btn_hotel"
         app:layout_constraintStart_toEndOf="@+id/btn_city_agenda"
         app:layout_constraintTop_toTopOf="@+id/btn_city_agenda">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-            <ImageView
-                android:id="@+id/img_transportation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="70dp"
-                android:src="@drawable/bus"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/txt_transportation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppinsmedium"
-                android:text="Transport"
-                app:layout_constraintStart_toStartOf="@+id/img_transportation"
-                app:layout_constraintTop_toBottomOf="@+id/img_transportation" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/poppinslight"
-                android:text="Bus and other"
-                android:textSize="11dp"
-                app:layout_constraintStart_toStartOf="@+id/txt_transportation"
-                app:layout_constraintTop_toBottomOf="@+id/txt_transportation" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/btn_weather"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:layout_marginEnd="10dp"
-        app:cardCornerRadius="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_transport"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_transport">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-            <ImageView
-                android:id="@+id/img_weather"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="70dp"
-                android:src="@drawable/weather_cloudy"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/txt_weather"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppinsmedium"
-                android:text="Weather"
-                app:layout_constraintStart_toStartOf="@+id/img_weather"
-                app:layout_constraintTop_toBottomOf="@+id/img_weather" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/poppinslight"
-                android:text="Weather Info"
-                android:textSize="11dp"
-                app:layout_constraintStart_toStartOf="@+id/txt_weather"
-                app:layout_constraintTop_toBottomOf="@+id/txt_weather" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/btn_currency"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:layout_marginTop="10dp"
-        app:cardCornerRadius="15dp"
-        app:layout_constraintStart_toStartOf="@+id/btn_city_agenda"
-        app:layout_constraintTop_toBottomOf="@+id/btn_city_agenda">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-            <ImageView
-                android:id="@+id/img_currency"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="70dp"
-                android:src="@drawable/coin"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/txt_currency"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/poppinsmedium"
-                android:text="Currency"
-                app:layout_constraintStart_toStartOf="@+id/img_currency"
-                app:layout_constraintTop_toBottomOf="@+id/img_currency" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:fontFamily="@font/poppinslight"
-                android:text="Currency status"
-                android:textSize="11dp"
-                app:layout_constraintStart_toStartOf="@+id/txt_currency"
-                app:layout_constraintTop_toBottomOf="@+id/txt_currency" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/btn_find_place"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        app:cardCornerRadius="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_currency"
-        app:layout_constraintEnd_toStartOf="@+id/btn_hotel"
-        app:layout_constraintStart_toEndOf="@+id/btn_currency"
-        app:layout_constraintTop_toTopOf="@+id/btn_currency">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -359,7 +256,7 @@
                 android:id="@+id/txt_find_place"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppinsmedium"
                 android:text="Find place"
                 app:layout_constraintStart_toStartOf="@+id/img_find_place"
@@ -378,9 +275,9 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/btn_hotel"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:layout_marginEnd="10dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="20dp"
         app:cardCornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/btn_find_place"
         app:layout_constraintEnd_toEndOf="parent"
@@ -407,7 +304,7 @@
                 android:id="@+id/txt_hotel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppinsmedium"
                 android:text="Hotel"
                 app:layout_constraintStart_toStartOf="@+id/img_hotel"
@@ -426,22 +323,77 @@
     </androidx.cardview.widget.CardView>
 
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btn_trip_package"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_hotel"
+        app:layout_constraintStart_toStartOf="@+id/btn_city_agenda"
+        app:layout_constraintTop_toBottomOf="@+id/btn_city_agenda">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_travel_package"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/travel_bag"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_travel_package"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Travel Package"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@+id/img_travel_package"
+                app:layout_constraintTop_toTopOf="@+id/img_travel_package" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Get your trip now!"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/img_travel_package"
+                app:layout_constraintStart_toStartOf="@+id/txt_travel_package"
+                app:layout_constraintTop_toBottomOf="@+id/txt_travel_package" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
     <TextView
         android:id="@+id/txt_main_city_agenda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/poppinsmedium"
-        android:text="Enjoy Your Event"
+        android:text="Hot Event"
         android:textSize="18dp"
-        app:layout_constraintStart_toStartOf="@+id/btn_currency"
-        app:layout_constraintTop_toBottomOf="@+id/btn_currency" />
+        app:layout_constraintStart_toStartOf="@+id/btn_trip_package"
+        app:layout_constraintTop_toBottomOf="@+id/btn_trip_package" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_main_event"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_main_city_agenda" />
